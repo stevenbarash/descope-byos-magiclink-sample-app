@@ -1,0 +1,257 @@
+.otp-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  font-family: "Reith Sans", "Arial", "Helvetica", sans-serif;
+  background: transparent;
+  padding-top: 40px;
+}
+
+.otp-card {
+  width: 100%;
+  max-width: 672px;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  position: relative;
+  z-index: 10;
+  border: none;
+}
+
+.card-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+
+.custom-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+.card-header h1 {
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.otp-input-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  gap: 12px;
+}
+
+.otp-input {
+  width: 52px;
+  height: 60px;
+  border: 2px solid #d1d1d1;
+  border-radius: 0;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #1a1a1a;
+  background-color: white;
+  transition: all 0.2s ease;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.otp-input:focus {
+  border-color: #BB1919;
+  box-shadow: 0 0 0 3px rgba(187, 25, 25, 0.1);
+}
+
+.otp-input::-webkit-inner-spin-button,
+.otp-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 14px;
+  text-align: left;
+  margin: 0 0 24px 0;
+  font-weight: 400;
+}
+
+.submit-button {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 0;
+  background: #BB1919;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  margin-bottom: 40px;
+  text-transform: none;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #a01515;
+  transform: none;
+}
+
+.submit-button:active:not(:disabled) {
+  background: #8b1212;
+  transform: none;
+}
+
+.submit-button.disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button-text {
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.submit-button.submitting .button-text {
+  opacity: 0;
+}
+
+.loading-spinner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.submit-button.submitting .loading-spinner {
+  opacity: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.action-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resend-link,
+.back-link {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0;
+  font-family: inherit;
+  font-weight: 400;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.resend-link.active {
+  color: #0066cc;
+  font-weight: 500;
+}
+
+.resend-link.active:hover {
+  text-decoration: underline;
+}
+
+.resend-link.disabled {
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.resend-link.resending {
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.back-link {
+  color: #cccccc;
+}
+
+.back-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+  .otp-card {
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 20px;
+  }
+
+  .bbc-logo svg {
+    width: 160px;
+    height: 48px;
+  }
+
+  .card-header h1 {
+    font-size: 24px;
+  }
+
+  .card-header {
+    margin-bottom: 32px;
+  }
+
+  .logo-container {
+    margin-bottom: 32px;
+  }
+
+  .otp-input-group {
+    margin: 32px 0;
+    gap: 8px;
+  }
+
+  .otp-input {
+    width: 44px;
+    height: 52px;
+    font-size: 20px;
+  }
+
+  .submit-button {
+    margin-bottom: 32px;
+  }
+}
+  

@@ -1,0 +1,212 @@
+.name-prompt-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  font-family: "Reith Sans", "Arial", "Helvetica", sans-serif;
+  background: transparent;
+  padding-top: 40px;
+}
+
+.name-prompt-card {
+  width: 100%;
+  max-width: 672px;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  position: relative;
+  z-index: 10;
+  border: none;
+}
+
+.card-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+
+.custom-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+.card-header h1 {
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.card-header p {
+  font-size: 16px;
+  color: #cccccc;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.input-group {
+  margin-bottom: 40px;
+}
+
+.custom-input {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.custom-input input {
+  width: 100%;
+  height: 52px;
+  padding: 16px 20px;
+  font-size: 16px;
+  border: 2px solid #d1d1d1;
+  border-radius: 0;
+  background-color: white;
+  color: #1a1a1a;
+  transition: all 0.2s ease;
+  outline: none;
+  z-index: 1;
+  position: relative;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.custom-input input:focus {
+  border-color: #BB1919;
+  box-shadow: 0 0 0 3px rgba(187, 25, 25, 0.1);
+}
+
+.custom-input input::placeholder {
+  color: #666666;
+  font-weight: 400;
+}
+
+.custom-input.invalid input {
+  border-color: #d32f2f;
+  background-color: #fff5f5;
+}
+
+.error-message,
+.validation-message {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin: 8px 0 0 0;
+  font-weight: 400;
+}
+
+.submit-button {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 0;
+  background: #BB1919;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  text-transform: none;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #a01515;
+  transform: none;
+}
+
+.submit-button:active:not(:disabled) {
+  background: #8b1212;
+  transform: none;
+}
+
+.submit-button.disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button-text {
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.submit-button.submitting .button-text {
+  opacity: 0;
+}
+
+.loading-spinner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.submit-button.submitting .loading-spinner {
+  opacity: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 720px) {
+  .name-prompt-card {
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 20px;
+  }
+
+
+  .card-header h1 {
+    font-size: 24px;
+  }
+
+  .card-header p {
+    font-size: 14px;
+  }
+
+  .card-header {
+    margin-bottom: 32px;
+  }
+
+  .logo-container {
+    margin-bottom: 32px;
+  }
+
+  .input-group {
+    margin-bottom: 32px;
+  }
+}
+  

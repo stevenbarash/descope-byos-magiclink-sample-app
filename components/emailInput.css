@@ -1,0 +1,272 @@
+/* Shared fixed width for input groups in EmailInput and PasswordInput */
+.fixed-width-group {
+  width: 672px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.email-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  font-family: "Reith Sans", "Arial", "Helvetica", sans-serif;
+  background: transparent;
+  padding-top: 40px;
+}
+
+.email-card {
+  width: 100%;
+  max-width: 672px;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  position: relative;
+  z-index: 10;
+  border: none;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.card-header h1 {
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.input-group {
+  margin-bottom: 40px;
+}
+
+.custom-input {
+  position: relative;
+  margin-bottom: 20px;
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-input label {
+  position: absolute;
+  left: 0;
+  top: 16px;
+  color: #ffffff;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.custom-input input:focus + label,
+.custom-input input:not(:placeholder-shown) + label {
+  top: -4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.custom-input input {
+  width: 100%;
+  height: 52px;
+  padding: 16px 0;
+  font-size: 16px;
+  border: none !important;
+  border-bottom: 2px solid #ffffff !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease;
+  outline: none;
+  z-index: 1;
+  position: relative;
+  font-family: inherit;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.custom-input input:focus {
+  border: none !important;
+  border-bottom: 4px solid #ffffff !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.custom-input input::placeholder {
+  color: transparent;
+  font-weight: 400;
+  transition: all 0.2s ease;
+}
+
+.custom-input input:not(:placeholder-shown)::placeholder,
+.custom-input.focused input::placeholder {
+  color: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  transform: translateY(-20px);
+}
+
+.custom-input.invalid input {
+  border: none !important;
+  border-bottom: 2px solid #d32f2f !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.error-message,
+.validation-message {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin: 8px 0 0 0;
+  font-weight: 400;
+}
+
+.sign-in-button {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 0;
+  background: #0051AD;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  margin-bottom: 40px;
+  text-transform: none;
+}
+
+.sign-in-button:hover:not(:disabled) {
+  background: #004494;
+  transform: none;
+}
+
+.sign-in-button:active:not(:disabled) {
+  background: #003a7a;
+  transform: none;
+}
+
+.sign-in-button.disabled {
+  background: #0051AD;
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.6;
+}
+
+.button-text {
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.sign-in-button.animating .button-text {
+  opacity: 0;
+}
+
+.loading-spinner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sign-in-button.animating .loading-spinner {
+  opacity: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.help-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.help-link {
+  color: #0066cc;
+  font-size: 14px;
+  text-decoration: underline;
+  font-weight: 400;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+.help-link:hover {
+  color: #0052a3;
+}
+
+@media (max-width: 720px) {
+  .email-card {
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 20px;
+  }
+
+  .bbc-logo svg {
+    width: 160px;
+    height: 48px;
+  }
+
+  .card-header h1 {
+    font-size: 24px;
+  }
+
+  .card-header {
+    margin-bottom: 32px;
+  }
+
+  .logo-container {
+    margin-bottom: 32px;
+  }
+
+  .input-group {
+    margin-bottom: 32px;
+  }
+
+  .sign-in-button {
+    margin-bottom: 32px;
+  }
+}
